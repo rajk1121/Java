@@ -13,7 +13,7 @@ public class Rabbits_in_forest {
 			arr[i]=sc.nextInt();
 		}
 		int ans=0;
-		HashMap<Integer, Integer> checkMap = new HashMap<>();
+		HashMap<Integer, Integer> checkMap = new HashMap<>(); 
 		for(int i= 0 ;i<n ; i++) {
 			if (arr[i]==0) {
 				ans++;
