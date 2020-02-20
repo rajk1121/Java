@@ -63,7 +63,7 @@ public class min_window_substring {
 		boolean job=  true;
 		while(job || (j<s.length() && i<j && i<s.length() )) {
 			if(job && i<s.length()) {
-				if(hmt.containsKey(s.charAt(i)) && (hms.get(s.charAt(i)) == hmt.get(s.charAt(i)))) {
+				if(hmt.containsKey(s.charAt(i)) && ((int)hms.get(s.charAt(i)) == (int)hmt.get(s.charAt(i)))) {
 					job=false;
 					hms.put(s.charAt(i), hms.get(s.charAt(i))-1);
 					i++;
