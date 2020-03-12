@@ -3,12 +3,12 @@ public class Sum3 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] nums = {1,2,-2,-1};
+		int[] nums = {-4,-2,-2,-2,0,1,2,2,2,3,3,4,4,6,6};
 		 List<List<Integer>> ans  = threeSum(nums);
 		 System.out.println(ans);
 	}
 	  public static List<List<Integer>> threeSum(int[] nums) {
-		  Arrays.sort(nums);
+		   Arrays.sort(nums);
 	        List<List<Integer>> answer = new ArrayList<>();
 	        HashMap<String, Integer> set = new HashMap<>();
 	        for(int i=0 ; i<nums.length ; i++){
@@ -20,7 +20,10 @@ public class Sum3 {
 	                        int sum = nums[j]+nums[k];
 	                        if(sum==-nums[i]){
 	                            if(set.containsKey(nums[i]+":"+nums[j]+":"+nums[k])){
-	                               continue; 
+	                               j++;
+	                                k--;
+	                                continue; 
+	                                
 	                            }
 	                           List<Integer> ianswer = new ArrayList<>();
 	                           
