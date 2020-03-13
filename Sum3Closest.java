@@ -22,7 +22,7 @@ public class Sum3Closest {
 //	                        System.out.println(Math.abs(target-isum));
 //	                        System.out.println(Math.abs(target-sum));
 	                        if(isum==target) {
-	                        	System.out.println(target);
+//	                        	System.out.println(target);
 	                        }
 	                        if(Math.abs(isum-target) <= Math.abs(sum-target) || target==isum){
                                 sum=isum;

@@ -3,7 +3,7 @@ public class Sum3 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] nums = {-4,-2,-2,-2,0,1,2,2,2,3,3,4,4,6,6};
+		int[] nums = {-2,-1,0,0,1,2};
 		 List<List<Integer>> ans  = threeSum(nums);
 		 System.out.println(ans);
 	}
