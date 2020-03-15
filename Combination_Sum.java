@@ -3,7 +3,7 @@ import java.util.*;
 public class Combination_Sum {
 	 public static List<List<Integer>>  combinationSum(int[] candidates, int target,List<Integer> isol, int sum, List<List<Integer>> solution, int index) {
 		 if(index>candidates.length || sum>target) {
-			 return null;
+			 return solution;
 		 }
 		 if(sum==target) {
 			 List<Integer> isoo = new ArrayList<>();
@@ -13,6 +13,10 @@ public class Combination_Sum {
 		 }
 		 while(index<candidates.length) {
 			 isol.add(candidates[index]);
+			 if(sum+candidates[index]>target) {
+				 isol.remove(isol.size()-1);
+				 return solution;
+			 }
 			 combinationSum(candidates, target, isol, sum+candidates[index],solution, index);
 			 if(index<candidates.length-1 && candidates[index]==candidates[index+1]) {
 				 index+=2;
