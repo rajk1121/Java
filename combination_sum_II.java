@@ -22,6 +22,7 @@ public class combination_sum_II {
 				 solution.add(isoo);
 				 set.put(str, 1);
 			 }
+			 return solution;
 				 
 			 
 //			 System.out.println(solution);
