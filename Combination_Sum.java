@@ -30,7 +30,7 @@ public class Combination_Sum {
 	    }
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] candidates = {2,2,3,6,7};
+		int[] candidates = {2,2,2,3,6,7};
 		int target= 7;
 		List<Integer> isol=new ArrayList<>();
 		List<List<Integer>> solution = new ArrayList<>();
