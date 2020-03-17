@@ -24,7 +24,7 @@ public class next_permutation {
 			if(nums[i]<nums[i+1]) {
 				int maxsofar=i+1;
 				for(int j=i+1 ; j<nums.length ; j++) {
-					if(nums[j]<nums[maxsofar] && nums[j]>nums[i]) {
+					if(nums[j]<=nums[maxsofar] && nums[j]>nums[i]) {
 					maxsofar = j;	
 					}
 				}
@@ -35,62 +35,23 @@ public class next_permutation {
 				break;
 			}
 		}
-//		System.out.println(i+"sdsd");
-		int[] sor = mergeSort(nums, ++i, nums.length-1);
-		for(int j=0;i<nums.length;i++,j++) {
-			nums[i] =sor[j]; 
+		System.out.println(i);
+		i++;
+		int j=nums.length-1;
+		int limit = (i+j)/2;
+		for(int k=i ; k<=limit ; k++) {
+			System.out.println(nums[k]+" "+nums[j]);
+			int temp = nums[k];
+//			System.out.println(j-k);
+			nums[k] = nums[j];
+			nums[j] = temp;
+			j--;
 		}
-		for(int j=0 ; j<nums.length ; j++) {
-			System.out.print(nums[j]+" ");
+		for(int k=0 ; k<nums.length ; k++) {
+			System.out.print(nums[k]+" ");
 		}
 
 	}
-	public static int[] mergeSort(int[] arr ,int  low ,int   high) {
-		if(low==high) {
-			int[] base=new int[1];
-			base[0]=arr[low];
-			return base;
-		}
-		int mid=(low+high)/2;
-		int[]one=mergeSort(arr , low , mid);
-		int[] two = mergeSort(arr , mid+1, high);
-		int[] sorted = merge(one , two);
-		return sorted;
-	}
-	public static int[] merge(int[] one , int[] two) {
-		
-		
-		int i=0 ;
-		int j=0;
-		int k=0;
-		int[] three=new int[one.length+two.length];
-		while(i<one.length && j<two.length) {
-			if(one[i]<=two[j]) {
-				three[k]=one[i];
-				i++;
-				
-			}
-			else {
-				three[k]=two[j];
-				j++;
-				
-			}
-			k++;
-			
-		}
-		while(i<one.length) {
-			
-				three[k]=one[i];
-				i++;
-				k++;
-			
-		}
-		while(j<two.length) {
-			three[k]=two[j];
-			j++;
-			k++;
-		}
-		return three;
-	}
+	
 
 }
