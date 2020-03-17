@@ -1,15 +1,12 @@
 /*
- * Write a program to solve a Sudoku puzzle by filling the empty cells.
+ * Determine if a 9x9 Sudoku board is valid. Only the filled cells need to be validated according to the following rules:
 
-A sudoku solution must satisfy all of the following rules:
+    Each row must contain the digits 1-9 without repetition.
+    Each column must contain the digits 1-9 without repetition.
+    Each of the 9 3x3 sub-boxes of the grid must contain the digits 1-9 without repetition.
 
-    Each of the digits 1-9 must occur exactly once in each row.
-    Each of the digits 1-9 must occur exactly once in each column.
-    Each of the the digits 1-9 must occur exactly once in each of the 9 3x3 sub-boxes of the grid.
-
-Empty cells are indicated by the character '.'.
  */
-public class sudoku_solver {
+public class valid_sudoku {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -22,24 +19,20 @@ public class sudoku_solver {
 	{'.','9','8','.','.','.','3','.','.'},
 	{'.','.','.','8','.','3','.','2','.'},
 	{'.','.','.','.','.','.','.','.','6'},
-	{'.','.','.','2','7','5','9','.','.'}
+	{'.','.','.','2','1','5','9','.','.'}
 			};
 //		char c = (char);
 //		System.out.println(c);
-		for(int i=0 ; i<9 ; i++) {
-			if(sudoku[0][i]=='.') {
-
-//				System.out.println(i);
-				generateAnswer(sudoku,0,i);
-				break;
-			}
-		}
-		for(int i=0; i<9 ; i++) {
-			for(int j=0 ; j<9 ; j++) {
-				System.out.print(sudoku[i][j]+" ");
-			}
-			System.out.println();
-		}
+//		for(int i=0 ; i<9 ; i++) {
+//			if(sudoku[0][i]=='.') {
+//
+////				System.out.println(i);
+//				generateAnswer(sudoku,0,i);
+//				break;
+//			}
+//		}
+		System.out.println(generateAnswer(sudoku,0,0));
+		
 	}
 	public static boolean generateAnswer(char[][] sudoku,int row, int col) {
 		
@@ -47,7 +40,7 @@ public class sudoku_solver {
 //			System.out.println('s');
 			return true;
 		}
-		if(sudoku[row][col]!='.') {
+		if(sudoku[row][col]=='.') {
 			if(col==8) {
 
 //				System.out.println('a');
@@ -60,6 +53,7 @@ public class sudoku_solver {
 				
 			}
 		}
+//		
 		
 		int colcell = col/3;
 		int rowcell = row/3;
@@ -67,44 +61,33 @@ public class sudoku_solver {
 		int erowcell = srowcell+3;
 		int scolcell = 3*colcell;
 		int ecolcell = scolcell+3;
-		for(int i=1 ; i<=9 ; i++) {
-			boolean duplicate= false;
+		char i = sudoku[row][col];
 			//check for cell
 			for(int j=srowcell; j<erowcell;j++) {
 				for(int k=scolcell ; k<ecolcell ; k++) {
-					if(sudoku[j][k]==(char)(i+'0')) {
-						duplicate = true;
-						break;
+					if(sudoku[j][k]==i && j!=row && k!=col) {
+						return false;
 					}
 						
 				}
 			}
 
-			if(duplicate)
-				continue;
 			//check for row
 			for(int j=0 ; j<9 ; j++) {
-				if(sudoku[row][j]==(char)(i+'0')) {
-					duplicate = true;
-					break;
+				if(sudoku[row][j]==i && j!=col) {
+					return false;
 				}
 					
 			}
 
-			if(duplicate)
-				continue;
 			//check for col
 			for(int j=0 ; j<9 ; j++) {
-				if(sudoku[j][col]==(char)(i+'0'))
+				if(sudoku[j][col]==i && i!=row)
 				{
-					duplicate = true;
-					break;
+					return false;
 				}
 			}
 
-			if(duplicate)
-				continue;
-			sudoku[row][col] =(char)(i+'0') ;
 			
 			if(col==8) {
 
@@ -118,13 +101,11 @@ public class sudoku_solver {
 				boolean value = generateAnswer(sudoku, row, col+1);
 				if(value)
 					return true;
-			}
+			
 
-			sudoku[row][col] = '.';
 			
 		}
 //		System.out.println('a');
-		sudoku[row][col] = '.';
 		
 		return false;
 	}
