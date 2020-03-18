@@ -1,6 +1,9 @@
 import java.util.*;
 public class column_finder {
-
+/*
+ * Given a positive integer N, print its corresponding column title as it would appear in an Excel sheet.
+For N =1 we have column A, for 27 we have AA and so on.
+ */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
