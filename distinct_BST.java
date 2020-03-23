@@ -24,16 +24,9 @@ public class distinct_BST {
 
 	private static int calculate( int left, int right, int[] n) {
 		
-		// TODO Auto-generated method stub
-//		if(i-left-1<=2) {
-//			return i-left;
-//		}
-//		if(right-i-1<=2) {
-//			return right-i;
-//		}
+		
 		if(left>right)
 			return 0;
-//		System.out.println(left+"  "+right);
 		if(right-left+1==3) {
 			n[3]= 5;
 			return 5;
