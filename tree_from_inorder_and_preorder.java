@@ -23,7 +23,7 @@ public static TreeNodes buildTree(int[] preorder, int[] inorder) {
     	return null;
     }
     for(j=0;j<inorder.length;j++){
-    	System.out.println(inorder[j]+" "+preorder[i]);
+//    	System.out.println(inorder[j]+" "+preorder[i]);
         if(inorder[j]==preorder[i]){
             found=true;
             break;
