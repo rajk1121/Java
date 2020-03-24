@@ -17,10 +17,10 @@ public class binary_tree_from_sorted_arr {
 	     return root;
 	    }
 	    public static Node buildTree(int[] nums, int left, int right){
-	        System.out.println(left+" "+right);
+//	        System.out.println(left+" "+right);
 	        if(left>right)
 	            return null;
-	        System.out.println(nums[(right+left)/2]);
+//	        System.out.println(nums[(right+left)/2]);
 	        Node root = new Node(nums[(right+left)/2]);
 	     root.left = buildTree(nums, left, (right+left)/2-1);
 	     root.right = buildTree(nums, (right+left)/2+1 ,right);
