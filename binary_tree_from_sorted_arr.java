@@ -3,6 +3,7 @@ class Node{
 	int val;
 	Node left;
 	Node right;
+	Node next;
 	public Node(int x) {this.val = x;}
 	
 }
