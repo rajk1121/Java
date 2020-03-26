@@ -18,27 +18,33 @@ public class inorder_iterative {
 //		root.left = demo.new TreeNode(x);
 //		root.left = demo.new TreeNode(x);
 //		root.left = demo.new TreeNode(x);
-		Stack<TreeNode> one = new Stack<>();
-		Stack<TreeNode> two = new Stack<>();
-		
-		if(root!=null) {
+		 Stack<TreeNode> one = new Stack<>();
+			Stack<TreeNode> two = new Stack<>();
+	        List<Integer> answer = new ArrayList<>();
+			
+			if(root!=null) {
 
-			two.push(root);
-		}
-		while(!two.isEmpty()) {
-			TreeNode temp = two.pop();
-			if(temp.right!=null) {
-				two.push(temp.right);
+				one.push(root);
 			}
-			if(temp.left==null) {
-				System.out.println(temp.val);
-				if(!one.isEmpty())
-					System.out.println(one.pop().val);
-			}else {
-				two.push(temp.left);
-				one.push(temp);
+			while(!one.isEmpty()) {
+				TreeNode temp = one.pop();
+				two.push(temp);
+	            if(temp.left!=null)
+	                one.push(temp.left);
+	            else{
+	                while(!two.isEmpty()){
+	                    TreeNode n = two.pop();
+	                    answer.add(n.val);
+	                    if(n.right!=null){
+	                        one.push(n.right);
+	                        break;
+	                    }
+	                    
+	                }
+	            }
 			}
-		}
+
+	        System.out.println(answer);
 
 	}
 
