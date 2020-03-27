@@ -44,7 +44,7 @@ public class complete_binary_tree {
 		root.left.right = new TreeNode(5);
 		root.right.left = new TreeNode(6);
 		System.out.println(countNodes(root));
-		System.out.println((2<<1 )- 1 );
+//		System.out.println((2<<1 )- 1 );
 	}
 
 }
