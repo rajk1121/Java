@@ -14,9 +14,9 @@ public class duplicate_subtree {
         String right = find(root.right, list);
 //        System.out.println(right);
         String inorder  = root.val+ " " + left +  right;
-        System.out.println(set);
-        System.out.println(inorder);
-        System.out.println("*****");
+//        System.out.println(set);
+//        System.out.println(inorder);
+//        System.out.println("*****");
         if( set.containsKey(inorder) ){
         	if(set.get(inorder)==0) {
 
