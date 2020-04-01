@@ -39,10 +39,26 @@ public class max_product_subarray {
 	        }
 	        return max;
 	    }
+	   public static int DPmaxProduct(int[] nums) {
+	        if(nums.length==0)
+	            return 0;
+	        int current_max = nums[0];
+	        int current_min = nums[0];
+	        int final_max=  nums[0];
+	        for(int i=1 ; i<nums.length ; i++){
+	            int temp =current_max;
+	            current_max= Math.max(Math.max(current_max*nums[i], current_min*nums[i]), nums[i]);
+	            current_min = Math.min(Math.min(temp*nums[i], current_min*nums[i]), nums[i]);
+	            if(final_max<current_max)
+	                final_max = current_max;
+	        }
+	        return final_max;
+	    }
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int[] nums = {-2,0,-1};
 		System.out.println(maxProduct(nums));
+		System.out.println(DPmaxProduct(nums));
 	}
 
 }
