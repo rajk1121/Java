@@ -58,7 +58,7 @@ public class ugly_number_II {
 		for(int i=1 ; i<n ;i++) {
 			int min = Math.min(m2, Math.min(m3, m5));
 			uglyNo[i] = min;
-			System.out.println(min);
+//			System.out.println(min);
 			if(min==m2) {
 				i2++;
 				m2 = uglyNo[i2]*2;
