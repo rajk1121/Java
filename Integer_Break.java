@@ -1,3 +1,5 @@
+import java.util.Collection;
+
 /*
  * Given a positive integer n, break it into the sum of at least two positive integers and maximize the product of those integers. Return the maximum product you can get.
 
@@ -16,6 +18,7 @@ Explanation: 10 = 3 + 3 + 4, 3 × 3 × 4 = 36.
 Note: You may assume that n is not less than 2 and not larger than 58.
 
  */
+import java.util.*;
 public class Integer_Break {
 	public static int integerBreak(int n) {
 	    
@@ -31,7 +34,7 @@ public class Integer_Break {
 			}
 		}
 //		for(int i=0 ; i<=n ; i++)System.out.print(dp[i]+" ");
-		
+//		Collections.sort(arg0, arg1);
 		return dp[n];
 	        
 	    }
