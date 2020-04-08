@@ -61,16 +61,13 @@ public static int  DPcoinChange(int[] coins, int amount){
 			
 			for(int j=0 ; j<coins.length ; j++) {
 				if(coins[j]<=i) {
-//					System.out.println(coins[j]);
+
 					dp[i]= Math.min(dp[i], 1+dp[i-coins[j]]);
-//					System.out.println(dp[i]+" "+coins[j]+" "+i);
+
 				}
 			}
-//			System.out.print(dp[i]+" ");
-		}
 
-//	    for(int i=0 ; i<=amount ;i++)
-//	        System.out.println(dp[i]);
+		}
         return dp[amount]>amount?-1:dp[amount];
         
     }
