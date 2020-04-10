@@ -1,5 +1,14 @@
 import java.util.*;
+/*
+ * Given two strings S and T, return if they are equal when both are typed into empty text editors. # means a backspace character.
 
+Example 1:
+
+Input: S = "ab#c", T = "ad#c"
+Output: true
+Explanation: Both S and T become "ac".
+
+ */
 public class bakspace_string_compare {
 	public static boolean backspaceCompare(String S, String T) {
         Stack<Character> s1 = new Stack();
@@ -40,6 +49,10 @@ public class bakspace_string_compare {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.println(backspaceCompare("a##c", "#a#c"));
+		int n= -2147483648+2147483646;
+		System.out.println(n);
+		System.out.println(-2147483647 - n);
+		System.out.println();
 	}
 
 }
