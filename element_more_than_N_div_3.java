@@ -1,3 +1,5 @@
+import java.util.HashSet;
+
 public class element_more_than_N_div_3 {
 
 	public static void main(String[] args) {
