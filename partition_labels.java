@@ -84,6 +84,44 @@ public class partition_labels {
 			ans.add(q.remove().str.length());
 		}
 		System.out.println(ans);
+		System.out.println(partition("ababcbacadefegdehijhklijsgiwgkehgiehgvknghieogohegherhgernkeigekgrwgikebkvnengojeogeiegbkjebkenoehgengelhgeghiighietheihgehgoegegoehoglnldbdllllllllllll"));
+	}
+	public static List<Integer> partition(String s) {
+		
+		
+		HashMap<Character, Integer> start = new HashMap<>();
+		HashMap<Character, Integer> end = new HashMap<>();
+		for(int i=0 ; i<s.length(); i++) {
+			if(start.containsKey(s.charAt(i))) {
+				end.put(s.charAt(i), i);
+			}else {
+				start.put(s.charAt(i), i);
+				end.put(s.charAt(i), i);
+			}
+		}
+		List<Integer> ans = new ArrayList<>();
+		int begin = -1;
+		int partition=end.get(s.charAt(0));
+		for(int i=0 ; i<s.length() ; i++) {
+//			System.out.println(start.get(s.charAt(i))+" "+end.get(s.charAt(i))+" "+s.charAt(i));
+			 if(i==partition) {
+				ans.add(partition - begin);
+				begin = partition;
+				if(i!=s.length()-1) {
+					partition = end.get(s.charAt(i+1));
+				}
+			}else {
+				if(end.get(s.charAt(i))>partition) {
+					partition= end.get(s.charAt(i));
+				}
+			}
+			
+		}
+		
+		
+		
+		
+		return ans;
 	}
 
 }
