@@ -20,10 +20,12 @@ Output: false
 
 
  */
+import java.util.*;
 public class longest_triplet_subsequence {
-	  public boolean increasingTriplet(int[] nums) {
+	  public static boolean increasingTriplet(int[] nums) {
 	        if(nums.length<3)
 	            return false;
+//	        String s = 'a';
 	        int min = nums[0];
 	        int max = 0;
 	        int i=1;
@@ -48,4 +50,23 @@ public class longest_triplet_subsequence {
 	        }
 	        return false;
 	    }
+	  public static void main(String[] a) {
+		  Scanner sc = new Scanner(System.in);
+	       String s = sc.next();
+	       int k = sc.nextInt();
+	       String sol = "";
+	       System.out.println(s.length());
+	       for(int i=0 ; i<s.length();  i++){
+	    	   System.out.println(i<s.length()-1);
+	           if(i<s.length()-1 && ((int)s.charAt(i)>= 65 && (int)s.charAt(i)<= 89 || ((int)s.charAt(i)>= 97 && (int)s.charAt(i)<= 122)) && ((int)s.charAt(i+1)>= 65 && (int)s.charAt(i+1)<= 89 || ((int)s.charAt(i+1)>= 97 && (int)s.charAt(i+1)<= 122)) ){
+	        	   System.out.println(i);
+	               int n = s.charAt(i)+s.charAt(i+1);
+	               n = n/k;
+	               sol = sol+(char)n+"";
+	           }else{
+	               sol = sol+s.charAt(i);
+	           }
+	       }
+	       System.out.println(sol);
+	  }
 }
