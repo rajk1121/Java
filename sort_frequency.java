@@ -7,7 +7,7 @@ class SortNode{
         size = 1;
     }
 }
-class ListComp implements Comparator<SortNode>{
+class xistComp implements Comparator<SortNode>{
     public int compare(SortNode a, SortNode b){
         return a.size - b.size ;
     }
@@ -28,7 +28,7 @@ class sort_frequency {
         for(Map.Entry<Character, SortNode> l:set.entrySet()){
             list.add(l.getValue());
         }
-        Collections.sort(list, new ListComp());
+        Collections.sort(list, new xistComp());
         String ans = "";
         for(int i=list.size()-1 ; i>=0 ; i--){
             char x = list.get(i).x;
