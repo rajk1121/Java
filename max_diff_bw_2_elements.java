@@ -1,4 +1,4 @@
-import java.util.;
+import java.util.*;
 public class max_diff_bw_2_elements {
 	public static void main (String[] args) {
 		//code
