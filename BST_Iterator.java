@@ -1,19 +1,19 @@
 import java.util.*;
-// public class TreeNode {
-//     int val;
-//     TreeNode left;
-//     TreeNode right;
-//     TreeNode() {}
-//     TreeNode(int val) { this.val = val; }
-//     TreeNode(int val, TreeNode left, TreeNode right) {
-//         this.val = val;
-//         this.left = left;
-//         this.right = right;
-//     }
-// }
+  class TBSreeNode {
+     int val;
+     TBSreeNode left;
+     TBSreeNode right;
+     TBSreeNode() {}
+     TBSreeNode(int val) { this.val = val; }
+     TBSreeNode(int val, TBSreeNode left, TBSreeNode right) {
+         this.val = val;
+         this.left = left;
+         this.right = right;
+     }
+ }
 class BSTIterator {
-    Stack<TreeNode> st;
-    public BSTIterator(TreeNode root) {
+    Stack<TBSreeNode> st;
+    public BSTIterator(TBSreeNode root) {
         st = new Stack<>();
         while(root!=null){
             st.push(root);
@@ -25,7 +25,7 @@ class BSTIterator {
     public int next() {
         if(st.size()==0)
             return -1;
-        TreeNode x = st.pop();
+        TBSreeNode x = st.pop();
         int val = x.val;
         // System.out.println(val+" 8888");
         x = x.right;
